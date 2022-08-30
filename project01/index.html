@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"To Do" List</title>
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
+    <!--Cdn de font-awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--Estilos propios-->
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <!-- 
+        proyecto 05: Lista de tareas pendientes
+        Conceptos claves:        
+        - getElementById()
+        - addEventListener()
+        - e.target
+        - appendChild()
+        - createElement()
+        - parentElement()
+        - remove()
+        - classList.add()  
+    <div class="modal oculto">
+        <p>Mensaje del modal</p>
+        <div id="botones_confirmacion">
+            <button onclick = "console.log('borrando la tarea')">si</button>
+            <button onclick = "ocultarModal()">no</button>
+        </div>        
+    </div>
+    -->  
+    <div class="screen_block">        
+    </div>
+
+    <div class="header">
+        <h1 class = "header_title">JavaScript 'To Do list' Project</h1>
+        <p class="header_message" id="message"></p>
+    </div>
+    <div >
+        
+        <div class="task_add_container">
+            <input type="text" placeholder = "Insert a task"
+                name="task_add" id="task_add_container">
+            <button id="task_add_btn" class="task_add_btn"><i class="fa-solid fa-plus"></i></button>
+        </div>        
+        <div id="tasks">
+            <!-- 
+            <div class = "task_list_container" id = "task_number_1">
+                <p class="task">Collect Shopping Collect Shopping</p>
+                <button class = "done"  onclick="tacharTarea('tarea_numero_1')"><i class="fa-solid fa-check"></i></button>
+                <button class = "delete" onclick="eliminarTarea('tarea_numero_1')"><i class="fa-solid fa-trash-can"></i></button>
+            </div>       
+            -->
+        </div>
+    </div>
+    
+    <script src="scripts.js"></script>
+</body>
