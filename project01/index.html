@@ -17,7 +17,7 @@
 <body>
     <!-- 
         proyecto 05: Lista de tareas pendientes
-        Conceptos claves:        
+        Conceptos claves:         
         - getElementById()
         - addEventListener()
         - e.target
@@ -25,26 +25,25 @@
         - createElement()
         - parentElement()
         - remove()
-        - classList.add()  
-    <div class="modal oculto">
-        <p>Mensaje del modal</p>
-        <div id="botones_confirmacion">
-            <button onclick = "console.log('borrando la tarea')">si</button>
-            <button onclick = "ocultarModal()">no</button>
-        </div>        
+        - classList.add()     
+    <div class="modal">
+        <div class="window">
+            <p>Mensaje del modal</p>
+            <div id="botones_confirmacion"> 
+                <button onclick = "deleteTask('tarea_numero_1')">si</button>
+                <button onclick = "hideModal()">no</button>
+            </div>        
+        </div>
     </div>
-    -->  
-    <div class="screen_block">        
-    </div>
-
+    -->
     <div class="header">
-        <h1 class = "header_title">JavaScript 'To Do list' Project</h1>
+        <h1 class = "header_title" id="header_title">JavaScript 'To Do list' Project</h1>
         <p class="header_message" id="message"></p>
     </div>
     <div >
         
         <div class="task_add_container">
-            <input type="text" placeholder = "Insert a task"
+            <input type="text" 
                 name="task_add" id="task_add_container">
             <button id="task_add_btn" class="task_add_btn"><i class="fa-solid fa-plus"></i></button>
         </div>        
@@ -52,9 +51,9 @@
             <!-- 
             <div class = "task_list_container" id = "task_number_1">
                 <p class="task">Collect Shopping Collect Shopping</p>
-                <button class = "done"  onclick="tacharTarea('tarea_numero_1')"><i class="fa-solid fa-check"></i></button>
-                <button class = "delete" onclick="eliminarTarea('tarea_numero_1')"><i class="fa-solid fa-trash-can"></i></button>
-            </div>       
+                <button class = "done"  onclick="crossoutTask('tarea_numero_1')"><i class="fa-solid fa-check"></i></button>
+                <button class = "delete" onclick="deleteTask('tarea_numero_1')"><i class="fa-solid fa-trash-can"></i></button>
+            </div>   
             -->
         </div>
     </div>
