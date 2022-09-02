@@ -1,21 +1,17 @@
-import api from "./helpers/wp_api.js";
-import { ajax } from "./helpers/ajax.js";
-import { Title } from "./components/Title.js";
 import { Header } from "./components/Header.js";
-import { Loader } from "./components/Loader.js";
-import { Menu } from "./components/Menu.js";
-import { SearchForm } from "./components/SearchForm.js";
 import { Posts } from "./components/Posts.js";
+import { Loader } from "./components/Loader.js";
+import { Router } from "./components/Router.js";
 
 export function App(){
     
-    //console.log(api.API_WP);
-    const $d = document;
-    const $root = $d.getElementById('root');
-    $root.appendChild(Header());           
+        
+    const $root = document.getElementById('root');
+    $root.appendChild(Header()); 
+    $root.appendChild(Posts());          
     $root.appendChild(Loader());
     
-    //$root.appendChild(Posts({titulo: 'Primer post', id: 0})); funciona OK
+    Router();
 
     /*para ver el mensaje de error
     ajax('sdfsdf', ()=>{console.log('ola k ase')})

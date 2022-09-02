@@ -1,7 +1,6 @@
-export function Posts(props) {    
-    let {titulo, id} = props;
+export function Posts() {        
     const $posts = document.createElement('section');
-    $posts.id = 'posts';
-    $posts.innerHTML = `${titulo} con el id: ${id}`;
+    $posts.id = 'posts';   
+    $posts.classList.add('grid-fluid'); 
     return $posts; 
 }
