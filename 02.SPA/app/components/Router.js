@@ -2,6 +2,7 @@ import api from "../helpers/wp_api.js";
 import { ajax } from "../helpers/ajax.js";
 import { PostCard } from "./PostCard.js";
 import { Post } from "./Post.js";
+import { SearchCard } from "./SearchCard.js";
 
 export async function Router(){   
     const $d = document;
@@ -23,7 +24,30 @@ export async function Router(){
             }
         });
     }else if (hash.includes("#/search")){
-        $main.innerHTML = "<h2>Seccion del buscador</h2>"
+        //$main.innerHTML = "<h2>Seccion del buscador</h2>"
+        let query = localStorage.getItem("wpSearch");
+        if (!query){
+            $d.querySelector(".loader").style.display = "none";
+            return false;
+        } 
+
+        await ajax({
+            url: `${api.SEARCH}${query}`,
+            callBackSuccess: (search) => {
+                console.log(search);
+                let html="";
+                if (search.length === 0){
+                    html = `<p class="error">No hubo resultados de busqueda para el termino <mark>${query}</mark></p>`;
+                }else{                   
+                    search.forEach((result) => {
+                        html += SearchCard(result);
+                    });
+                }
+
+                $main.innerHTML = html;
+            }
+        })
+        
     }else if (hash === "#/contact"){
         $main.innerHTML = "<h2>Seccion del contacto</h2>"
     }else{
@@ -35,7 +59,6 @@ export async function Router(){
             callBackSuccess: (post) => {
                 console.log(post);
                 $main.innerHTML = Post(post);
-
             }
         })
     }
